@@ -1,0 +1,5 @@
+[Layout]
+DisplayNames=,,,
+LayoutList=hr,gb,rs,ru
+Use=true
+VariantList=alternatequotes,,,phonetic

@@ -1,0 +1,122 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "height": 16,
+        "width": 34,
+        "padding": {
+            "top": 2,
+           "left": 2
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "┌────────────────────── Hardware ──────────────────────┐",
+            "outputColor": "38;2;150;20;255"
+        },
+        {
+            "type": "title",
+            "key": " PC",
+            "keyColor": "green"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├󰍛 CPU",
+            "showPeCoreCount": true,
+            "format": "{1}",
+            "keyColor": "green"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰍛 GPU",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├󰍛 Memory",
+            "keyColor": "green"
+        },
+        {
+            "type": "board",
+            "key": "└ └󰍛 Motherboard",
+            "keyColor": "green"
+        },
+        "break",
+        {
+            "type": "disk",
+            "key": " 󰧞  Disk",
+            "keyColor": "yellow"
+        },
+        "break",
+        {
+            "type": "display",
+            "key": " 󰧞 󰍹 Display",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────────────────┘",
+            "outputColor": "38;2;150;20;255"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "┌────────────────────── Software ──────────────────────┐",
+            "outputColor": "38;2;150;20;255"
+        },
+        {
+            "type": "os",
+            "key": " OS",
+            "keyColor": "yellow",
+            "format": "󰣇 {pretty-name} BTW 󰣇",
+            "outputColor": "1;3;94"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├ Kernel",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├󰏖 Packages",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "shell",
+            "key": "│ ├ Shell",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "uptime",
+            "key": "└ └ Uptime",
+            "keyColor": "yellow"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " DE",
+            "keyColor": "blue"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├ LM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "└ └ WM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────────────────┘",
+            "outputColor": "38;2;150;20;255"
+        },
+        {
+            "type": "custom",
+            "format": "               \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+        },
+        "break",
+    ]
+}

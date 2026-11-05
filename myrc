@@ -1,0 +1,18 @@
+if [[ $- == *i* ]] && [[ -t 1 ]] && [[ $TERM != dumb ]] && [[ $SHLVL -eq 1 ]] \
+   && command -v hyfetch >/dev/null; then
+    hyfetch
+fi
+
+alias q="exit"
+alias c="clear"
+alias nano="nano -l"
+alias vencord='sh -c "$(curl -sS https://vencord.dev/install.sh)"'
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export CLICOLOR=1
+export TERM=xterm-256color
+export GPG_TTY=$(tty)
+export EDITOR=nano
+export BROWSER=brave-nightly
