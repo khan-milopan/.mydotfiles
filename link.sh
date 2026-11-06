@@ -48,25 +48,37 @@ add_myrc "$HOME/.zshrc"
 replace "./fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 # Hyfetch
 replace "./hyfetch/hyfetch.json" "$HOME/.config/hyfetch.json"
+# Vencord settings for Flatpak Discord
+replace "./vencord/settings.json" "$HOME/.var/app/com.discordapp.Discord/config/Vencord/settings/settings.json"
+replace "./vencord/quickCss.css" "$HOME/.var/app/com.discordapp.Discord/config/Vencord/settings/quickCss.css"
+# Flatpak cancer
+flatpak override --user --filesystem="$HOME/.mydotfiles" com.discordapp.Discord
 
+# Plasma (optional)
+read -r -p "Apply Plasma config? This restarts plasmashell. [y/N] " answer
+if [[ "$answer" =~ ^[Yy]$ ]]; then
 
-# Quit Plasma before config change
-if pgrep -x plasmashell >/dev/null; then
-    kquitapp6 plasmashell
-    while pgrep -x plasmashell >/dev/null; do sleep 0.2; done
+    # Quit Plasma before config change
+    if pgrep -x plasmashell >/dev/null; then
+        kquitapp6 plasmashell
+        while pgrep -x plasmashell >/dev/null; do sleep 0.2; done
+    fi
+
+    # Plasma panel and widget layout
+    replace "./plasma/plasma-org.kde.plasma.desktop-appletsrc" "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+    replace "./plasma/plasmashellrc" "$HOME/.config/plasmashellrc"
+    # Installed Plasma widgets (whole dir)
+    replace "./plasma/plasmoids" "$HOME/.local/share/plasma/plasmoids"
+    # Shortcuts
+    replace "./plasma/kglobalshortcutsrc" "$HOME/.config/kglobalshortcutsrc"
+    # Keyboard layout
+    replace "./plasma/kxkbrc" "$HOME/.config/kxkbrc"
+
+    # Start Plasma after config change
+    kstart plasmashell &>/dev/null &
+
+else
+    echo "Skipping Plasma."
 fi
-
-# Plasma panel and widget layout
-replace "./plasma/plasma-org.kde.plasma.desktop-appletsrc" "$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
-replace "./plasma/plasmashellrc" "$HOME/.config/plasmashellrc"
-# Installed Plasma widgets (whole dir)
-replace "./plasma/plasmoids" "$HOME/.local/share/plasma/plasmoids"
-# Shortcuts
-replace "./plasma/kglobalshortcutsrc" "$HOME/.config/kglobalshortcutsrc"
-# Keyboard layout
-replace "./plasma/kxkbrc" "$HOME/.config/kxkbrc"
-
-# Start Plasma after config change
-kstart plasmashell &>/dev/null &
 
 echo "You don't have to but it won't be bad to restart your shit now :)"
