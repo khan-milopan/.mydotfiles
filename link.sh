@@ -48,6 +48,8 @@ add_myrc "$HOME/.zshrc"
 replace "./fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 # Hyfetch
 replace "./hyfetch/hyfetch.json" "$HOME/.config/hyfetch.json"
+# Git
+replace "./.gitconfig" "$HOME/.gitconfig"
 # Vencord settings for Flatpak Discord
 replace "./vencord/settings.json" "$HOME/.var/app/com.discordapp.Discord/config/Vencord/settings/settings.json"
 replace "./vencord/quickCss.css" "$HOME/.var/app/com.discordapp.Discord/config/Vencord/settings/quickCss.css"
